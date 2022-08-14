@@ -12,10 +12,10 @@ use tempfile::tempdir;
 #[derive(Parser, Debug)]
 #[clap(author, version, about, long_about = None, trailing_var_arg=true)]
 struct Args {
-    #[clap(short, long, value_parser, name = "crate")]
+    #[clap(value_parser, name = "crate", help = "Name of crate binary to install")]
     install_crate: String,
     #[clap(
-        long,
+        name = "inner arguments",
         multiple_values = true,
         allow_hyphen_values = true,
         required = false,
